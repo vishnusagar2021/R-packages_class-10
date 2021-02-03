@@ -1,0 +1,59 @@
+---
+title: "R_packages day 10"
+author: "vishnu sagar2021"
+date: "2/2/2021"
+output: html_document
+---
+#R data interfaces
+In R, we can read data from files stored outside the R environment./
+We can also write data into files which will be stored and accessed by the operating system./
+R can read and write into various file formats like csv, excel, xml etc./
+## Getting and Setting the Working Directory
+Check which directory the R workspace is pointing to using the `getwd()` function./
+Set a new working directory using `setwd()` function./
+
+```{r}
+getwd()
+setwd("/cloud/project")
+print(getwd)
+```
+#input the data as csv file
+
+sample, ph, DO, BOD\
+1, 7, 4, 2\
+2,6.5, 3.6,3.2\
+3,5.9, 4.2,2.1\
+4, 5.7.4.4, 1.9\
+reading csv files
+read.csv()
+`read.csv(file, header = TRUE, sep = ",", quote = "\"", dec = ".", fill = TRUE, comment.char = "",  na.strings = "NA", strip.white = TRUE, stringsAsFactors = FALSE)`
+
+```{r}
+data=read.csv("", sep= ",", dec= ".", header = "T", stringsAsFactors = F, fill = "T")
+read.csv 
+
+```
+
+
+
+```{r}
+install.packages(https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages)
+any(grepl("xlsx",installed.packages("xlsx")))
+
+library("xlsx")
+
+search("xlsx")
+search()
+any(grepl("xlsx",installed.packages("xlsx")))
+data= read.xlsx ("/E/Kerala University/online class/data_model",password = password, sheetIndex = 1)
+
+setwd ("xlsx")
+
+```
+```{r}
+
+library("xlsx", lib.loc = "path to library")
+
+data= read.xlsx ("/E:/Kerala University/online class/data_model",password = password, sheetIndex = 1)
+```
+

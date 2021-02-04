@@ -1,0 +1,96 @@
+---
+title: "Untitled"
+author: "vishnu sagar2021"
+date: "2/4/2021"
+output: html_document
+---
+#Assignment
+1. Read the dataset from ....
+```{r}
+data1=read.csv("/cloud/project/Assignment01_data/government-finance-statistics-general-government-year-ended-june-2020-csv.csv", sep = ",", header = T, na.strings = "NA", stringsAsFactors = F,dec = ".")
+
+data1
+
+#charecter variables, convert them to factors in the next step : Ans: stringsAsFactors = T
+data2=read.csv("/cloud/project/Assignment01_data/government-finance-statistics-general-government-year-ended-june-2020-csv.csv", sep = ",", header = T, na.strings = "NA", stringsAsFactors = T,dec = ".")
+data2
+
+#Show the data is read properly by printing first few rows.
+head(data2)
+
+```
+
+#2. Create a 3*3 matrix A using the following data [4,5,7,8,0,9,5,4,8]. Find the transpose of the matrix.
+```{r}
+matrix_A= matrix(c(4,5,7,8,0,9,5,4,8), nrow = 3, ncol = 3, byrow = TRUE)
+matrix_A
+#Find the transpose of the matrix.
+t(matrix_A)
+
+```
+#3. Create a 3*3 matrix B using the following data [14,52,75,89,10,91,51,44,28]. Using matrix A and B find A + B, A - B and A*B.
+
+```{r}
+matrix_A= matrix(c(4,5,7,8,0,9,5,4,8), nrow = 3, ncol = 3, byrow = TRUE)
+matrix_A
+matrix_B=matrix(c(14,52,75,89,10,91,51,44,28), nrow = 3, ncol = 3, byrow = TRUE)
+matrix_B
+
+#sum of Matrix
+sum= matrix_A+matrix_B
+sum
+#subtraction
+sub= matrix_A-matrix_B
+sub
+#multiplication
+prod= matrix_A*matrix_B
+prod
+```
+
+#Create 2 vectors with 7 elements each and perform all the vector operations.
+
+```{r}
+vector1=c(2,4,6,8,10,12,14)
+vector2=c(3,5,7,9,11,13,15)
+typeof(vector1)
+typeof(vector2)
+
+class(vector1)
+length(vector1)
+str(vector1)
+vector3= as.character(vector1)
+
+sum=vector1+vector2
+sum
+
+```
+#5. Create the following vectors and create a data frame using those vectors. Also find the charectristics of the data frame.
+id,name,salary,start_date,dept
+1,Rick,623.3,2012-01-01,IT
+2,Dan,515.2,2013-09-23,Operations
+3,Michelle,611,2014-11-15,IT
+4,Ryan,729,2014-05-11,HR
+5,Gary,843.25,2015-03-27,Finance
+6,Nina,578,2013-05-21,IT
+7,Simon,632.8,2013-07-30,Operations
+8,Guru,722.5,2014-06-17,Finance
+
+```{r}
+id= c(1:8)
+name= c("Rick","Dan","Michelle","Ryan","Gary","Nina","Simon","Guru")
+salary= c( 623.3,515.2,611,729,843,578,632,722.5)
+start_date= as.Date(c ("2012-01-01", "2013-09-23","2014-11-15","2015-03-27","2013-07-30","2013-07-30","2013-07-30","2013-07-30"))
+dept = c("IT", "Operations", "IT","IT", "Operations", "IT","IT")
+
+
+salary_data= data.frame (c(1:8),
+name= c("Rick","Dan","Michelle","Ryan","Gary","Nina","Simon","Guru"),
+salary= c(623.3,515.2,611,729,843,578,632,722.5),
+start_date= as.Date(c("2012-01-01", "2013-09-23","2014-11-15","2015-03-27","2013-07-30","2013-07-30","2013-07-30","2013-07-30")),
+dept = c("IT", "Operations", "IT","IT", "Operations", "IT","IT","IT"),
+stringsAsFactors = FALSE)
+salary_data
+
+
+```
+
